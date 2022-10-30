@@ -39,6 +39,10 @@ function RoleForm() {
         .then((res) => {
           if (res.status === 200) {
             dispatch(setRole({ value: [role] }));
+            setName("");
+            setaccessArea("");
+            setDuser("");
+            setStatus(0);
           }
         });
     }

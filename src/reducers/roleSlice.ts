@@ -26,7 +26,11 @@ export const roleSlice = createSlice({
       // action.payload.value.map((x) => state.value.push(x));
       state.value = [...action.payload.value];
     },
+    updateRole: (state, action: PayloadAction<roleItem>) => {
+      const index = state.value.indexOf(action.payload);
+      if (index !== -1) state.value.splice(index, 1);
+    },
   },
 });
-export const { setRole } = roleSlice.actions;
+export const { setRole, updateRole } = roleSlice.actions;
 export default roleSlice.reducer;
